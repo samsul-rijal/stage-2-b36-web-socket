@@ -32,24 +32,27 @@ const socketIo = (io) => {
               model: profile,
               as: "profile",
               attributes: {
-                exclude:["createdAt", "updatedAt"]
-              }
+                exclude: ["createdAt", "updatedAt"],
+              },
             },
             {
               model: chat,
               as: "recipientMessage",
               attributes: {
-                exclude:["createdAt", "updatedAt"]
-              }
+                exclude: ["createdAt", "updatedAt"],
+              },
             },
             {
               model: chat,
               as: "senderMessage",
               attributes: {
-                exclude:["createdAt", "updatedAt"]
-              }
+                exclude: ["createdAt", "updatedAt"],
+              },
             },
-          ]
+          ],
+          attributes: {
+            exclude: ["createdAt", "updatedAt", "password"],
+          },
         });
 
       custommerContacts = JSON.parse(JSON.stringify(custommerContacts))
